@@ -48,10 +48,13 @@ table {
 a, button, input {
   outline: none; }
 
+input[type=checkbox] {
+  display: none; }
+
 @font-face {
   font-family: 'fontello';
-  src: url("../font/fontello.eot?659458");
-  src: url("../font/fontello.eot?659458#iefix") format("embedded-opentype"), url("../font/fontello.woff?659458") format("woff"), url("../font/fontello.ttf?659458") format("truetype"), url("../font/fontello.svg?659458#fontello") format("svg");
+  src: url("../font/fontello.eot?10765766");
+  src: url("../font/fontello.eot?10765766#iefix") format("embedded-opentype"), url("../font/fontello.woff?10765766") format("woff"), url("../font/fontello.ttf?10765766") format("truetype"), url("../font/fontello.svg?10765766#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
@@ -60,7 +63,7 @@ a, button, input {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?659458#fontello') format('svg');
+    src: url('../font/fontello.svg?10765766#fontello') format('svg');
   }
 }
 */
@@ -71,27 +74,20 @@ a, button, input {
   speak: none;
   display: inline-block;
   text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
-  text-transform: none;
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: .2em;
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+  text-transform: none; }
 
 .icon-up-open-mini:before {
   content: '\e800'; }
 
 /* '' */
+.icon-ok:before {
+  content: '\e801'; }
+
+/* '' */
 .icon-phone:before {
   content: '\e80a'; }
 
@@ -122,7 +118,7 @@ a, button, input {
 /* '' */
 #main-container {
   width: 980px;
-  margin: 0 auto;
+  margin: 10px;
   font-family: 'Droid Sans', sans-serif; }
   #main-container header {
     padding: 25px 0 25px 25px;
@@ -138,7 +134,7 @@ a, button, input {
     #main-container #tabs nav {
       height: 78px; }
       #main-container #tabs nav ul li {
-        margin-right: 15px;
+        margin-right: 6px;
         display: inline-block; }
         #main-container #tabs nav ul li a {
           padding-top: 9px;
@@ -154,50 +150,51 @@ a, button, input {
           outline: none;
           color: #6e85be;
           font-size: 14px;
-          font-family: "Droid Sans";
           -moz-background-origin: border;
           background-origin: border-box; }
           #main-container #tabs nav ul li a.life-insurance {
             width: 174px;
-            padding-left: 15px; }
+            text-indent: 15px; }
           #main-container #tabs nav ul li a.ofe {
             width: 200px;
-            padding-left: 10px; }
+            text-indent: 10px; }
           #main-container #tabs nav ul li a.selected {
             color: #fff;
-            background-color: #11358e;
-            -webkit-box-shadow: 0 1px rgba(0, 0, 0, 0.3);
-            -moz-box-shadow: 0 1px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 1px rgba(0, 0, 0, 0.3);
-            background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
-            background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
-            background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
-            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25)); }
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #1541aa), color-stop(0.75, #0e2b7b));
+            background-image: -o-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+            background-image: -moz-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+            background-image: -webkit-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+            background-image: -ms-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+            background-image: linear-gradient(to bottom, #1541aa 25%, #0e2b7b 75%);
+            border-color: rgba(255, 255, 255, 0); }
       #main-container #tabs nav .control-panels {
         position: relative;
         background: #f4f5f7;
-        border-top: 6px solid #0e2b7b;
-        height: 51px; }
-        #main-container #tabs nav .control-panels button {
+        height: 51px;
+        border-top: 6px solid #0E2B7B; }
+        #main-container #tabs nav .control-panels button.change-panels-state {
           width: 130px;
-          height: 27px;
           float: right;
           top: 14px;
           right: 10px;
           position: relative;
           border: none;
-          border-bottom: 1px solid #aaabac;
           outline: none;
-          color: #fff;
-          background-color: #11358e;
           -webkit-box-shadow: 0 1px rgba(0, 0, 0, 0.3);
           -moz-box-shadow: 0 1px rgba(0, 0, 0, 0.3);
           box-shadow: 0 1px rgba(0, 0, 0, 0.3);
-          background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
-          background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
-          background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
-          background-image: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25)); }
-          #main-container #tabs nav .control-panels button.show-all {
+          color: #fff;
+          padding: 0;
+          padding-top: 2px;
+          padding-bottom: 7px;
+          margin: 0;
+          background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #1541aa), color-stop(0.75, #0e2b7b));
+          background-image: -o-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+          background-image: -moz-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+          background-image: -webkit-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+          background-image: -ms-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+          background-image: linear-gradient(to bottom, #1541aa 25%, #0e2b7b 75%); }
+          #main-container #tabs nav .control-panels button.change-panels-state.show-all {
             color: #383838;
             background-color: #fff;
             -webkit-box-shadow: 0 1px rgba(0, 0, 0, 0.3);
@@ -207,6 +204,19 @@ a, button, input {
             background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
             background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
             background-image: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25)); }
+          #main-container #tabs nav .control-panels button.change-panels-state span.caption {
+            display: inline-block;
+            width: 96px;
+            text-align: center;
+            font-size: 11px;
+            position: relative; }
+          #main-container #tabs nav .control-panels button.change-panels-state span.arrow {
+            width: 5px;
+            height: 5px;
+            font-size: 16px;
+            position: relative;
+            top: 2px;
+            left: 4px; }
   #main-container .content {
     clear: both;
     margin-top: 20px; }
@@ -230,21 +240,26 @@ a, button, input {
       #main-container .content article a.header.header-open {
         color: #fff;
         font-weight: bold;
-        background-color: #11358e;
-        -webkit-box-shadow: 0 1px rgba(0, 0, 0, 0.3);
-        -moz-box-shadow: 0 1px rgba(0, 0, 0, 0.3);
-        box-shadow: 0 1px rgba(0, 0, 0, 0.3);
-        background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
-        background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
-        background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
-        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25)); }
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #1541aa), color-stop(0.75, #0e2b7b));
+        background-image: -o-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+        background-image: -moz-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+        background-image: -webkit-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+        background-image: -ms-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+        background-image: linear-gradient(to bottom, #1541aa 25%, #0e2b7b 75%);
+        border: none; }
       #main-container .content article a.header h3 {
         font-size: 14px;
         line-height: 13px; }
-      #main-container .content article a.header span.icon-down-open, #main-container .content article a.header span.icon-up-open {
-        font-size: 16px;
+      #main-container .content article a.header span.ui-accordion-header-icon {
         display: inline-block;
-        float: right; }
+        float: right;
+        position: relative;
+        right: 12px;
+        font-size: 26px; }
+        #main-container .content article a.header span.ui-accordion-header-icon.icon-down-open {
+          color: #11348d; }
+        #main-container .content article a.header span.ui-accordion-header-icon.icon-up-open {
+          color: #fff; }
     #main-container .content article section {
       padding-left: 14px;
       padding-top: 22px; }
@@ -279,62 +294,88 @@ a, button, input {
           color: #d01d1d;
           border-bottom: 1px solid #bbc2d2;
           padding-bottom: 10px; }
-      #main-container #sidebar section.sidebar-section .sidebar-content {
-        margin-top: 10px; }
-      #main-container #sidebar section.sidebar-section#contact h4 {
-        color: #002664; }
-      #main-container #sidebar section.sidebar-section#contact input {
-        width: 265px;
-        height: 31px;
-        background-color: #fff;
-        border: solid 1px #d6d6d6;
-        font-size: 14px;
+    #main-container #sidebar #contact .sidebar-content {
+      margin-top: 20px;
+      margin-bottom: 35px; }
+    #main-container #sidebar #contact h4 {
+      color: #002664; }
+    #main-container #sidebar #contact input {
+      width: 265px;
+      height: 31px;
+      background-color: #fff;
+      border: solid 1px #d6d6d6;
+      font-size: 14px;
+      color: #686868;
+      margin-bottom: 8px;
+      padding: 0 5px 0 13px; }
+      #main-container #sidebar #contact input::-webkit-input-placeholder {
         color: #686868;
-        margin-bottom: 8px;
-        padding: 0 5px 0 13px; }
-        #main-container #sidebar section.sidebar-section#contact input::-webkit-input-placeholder {
-          color: #686868;
-          font-style: italic; }
-        #main-container #sidebar section.sidebar-section#contact input:-moz-placeholder {
-          color: #686868;
-          font-style: italic;
-          opacity: 1; }
-        #main-container #sidebar section.sidebar-section#contact input::-moz-placeholder {
-          color: #686868;
-          font-style: italic;
-          opacity: 1; }
-        #main-container #sidebar section.sidebar-section#contact input:-ms-input-placeholder {
-          color: #686868;
-          font-style: italic; }
-      #main-container #sidebar section.sidebar-section#contact label {
-        font-size: 11px;
-        color: #383838; }
-        #main-container #sidebar section.sidebar-section#contact label input[type='checkbox'] {
-          width: 20px;
-          height: 21px;
-          background-color: red;
-          border: solid 1px #d6d6d6; }
-      #main-container #sidebar section.sidebar-section#contact button[type='submit'] {
-        width: 93px;
-        height: 35px;
-        background-color: #dc0009;
-        -webkit-box-shadow: 1px 1px rgba(0, 0, 0, 0.36), inset 1px 1px rgba(255, 255, 255, 0.63);
-        -moz-box-shadow: 1px 1px rgba(0, 0, 0, 0.36), inset 1px 1px rgba(255, 255, 255, 0.63);
-        box-shadow: 1px 1px rgba(0, 0, 0, 0.36), inset 1px 1px rgba(255, 255, 255, 0.63);
-        background-image: -webkit-linear-gradient(top, #db2525, #c51616);
-        background-image: -moz-linear-gradient(top, #db2525, #c51616);
-        background-image: -o-linear-gradient(top, #db2525, #c51616);
-        background-image: linear-gradient(to bottom, #db2525, #c51616);
-        border: none;
-        color: #fff;
-        font-size: 16px;
-        font-weight: bold;
-        display: block;
-        float: right; }
-        #main-container #sidebar section.sidebar-section#contact button[type='submit'] span {
-          font-size: 16px; }
+        font-style: italic; }
+      #main-container #sidebar #contact input:-moz-placeholder {
+        color: #686868;
+        font-style: italic;
+        opacity: 1; }
+      #main-container #sidebar #contact input::-moz-placeholder {
+        color: #686868;
+        font-style: italic;
+        opacity: 1; }
+      #main-container #sidebar #contact input:-ms-input-placeholder {
+        color: #686868;
+        font-style: italic; }
+    #main-container #sidebar #contact input[type=checkbox] + label {
+      font-size: 11px;
+      line-height: 0px; }
+    #main-container #sidebar #contact input[type=checkbox] + label:before {
+      content: "";
+      display: inline-block;
+      float: left;
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 8px;
+      background-color: #fff;
+      -moz-box-shadow: 0 0 0 1px #c9c9c9;
+      -webkit-box-shadow: 0 0 0 1px #c9c9c9;
+      box-shadow: 0 0 0 1px #c9c9c9;
+      border-radius: 0px; }
+    #main-container #sidebar #contact input[type=checkbox]:checked + label:before {
+      font-family: 'fontello';
+      content: '\e801';
+      color: #dc0009;
+      background-color: #fff;
+      text-align: center;
+      line-height: 20px;
+      text-shadow: 0px 0px 3px #eee; }
+    #main-container #sidebar #contact button[type='submit'] {
+      width: 93px;
+      background-color: #dc0009;
+      -webkit-box-shadow: 1px 1px rgba(0, 0, 0, 0.36), inset 1px 1px rgba(255, 255, 255, 0.63);
+      -moz-box-shadow: 1px 1px rgba(0, 0, 0, 0.36), inset 1px 1px rgba(255, 255, 255, 0.63);
+      box-shadow: 1px 1px rgba(0, 0, 0, 0.36), inset 1px 1px rgba(255, 255, 255, 0.63);
+      background-image: -webkit-linear-gradient(top, #db2525, #c51616);
+      background-image: -moz-linear-gradient(top, #db2525, #c51616);
+      background-image: -o-linear-gradient(top, #db2525, #c51616);
+      background-image: linear-gradient(to bottom, #db2525, #c51616);
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      display: block;
+      float: right;
+      position: relative;
+      right: 15px;
+      margin-top: 20px; }
+      #main-container #sidebar #contact button[type='submit']::after {
+        font-family: "fontello";
+        content: '\e80f';
+        margin-left: 5px;
+        position: relative;
+        top: 2px;
+        left: 5px;
+        font-size: 25px; }
     #main-container #sidebar #vcard {
       height: 91px; }
+      #main-container #sidebar #vcard .sidebar-content {
+        margin-top: 10px; }
       #main-container #sidebar #vcard figure {
         float: right;
         position: relative;
@@ -348,24 +389,28 @@ a, button, input {
           color: #103184; }
           #main-container #sidebar #vcard ul li a.vcard-mail span[class*='icon-'], #main-container #sidebar #vcard ul li a.vcard-phone span[class*='icon-'] {
             margin-right: 12px; }
+    #main-container #sidebar #search .sidebar-content {
+      margin-top: 25px; }
     #main-container #sidebar #search label {
       width: 1px;
       height: 1px;
       display: inline-block;
       position: relative;
-      left: 3px;
+      left: 8px;
       font-size: 20px;
-      top: 5px;
+      top: 3px;
       z-index: 100;
       color: #103184; }
     #main-container #sidebar #search input[type='search'] {
       width: 255px;
-      height: 31px;
+      font-size: 14px;
       background-color: #fff;
       display: inline-block;
-      box-sizing: border-box;
-      border: 1px solid #c9c9c9;
-      padding: 0 5px 0 28px; }
+      -webkit-box-shadow: 1px 1px rgba(255, 255, 255, 0.35), inset 0 0 3px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 1px 1px rgba(255, 255, 255, 0.35), inset 0 0 3px rgba(0, 0, 0, 0.5);
+      box-shadow: 1px 1px rgba(255, 255, 255, 0.35), inset 0 0 3px rgba(0, 0, 0, 0.5);
+      padding: 5px 5px 5px 28px;
+      border: none; }
       #main-container #sidebar #search input[type='search']::-webkit-input-placeholder {
         color: #103184; }
       #main-container #sidebar #search input[type='search']:-moz-placeholder {
@@ -378,13 +423,20 @@ a, button, input {
         color: #103184; }
     #main-container #sidebar #search button.search {
       width: 25px;
-      height: 31px;
       border: none;
-      background-color: #11358e;
-      background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
-      background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
-      background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
-      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
+      padding: 5px 0;
+      font-size: 15px;
+      line-height: 16px;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #1541aa), color-stop(0.75, #0e2b7b));
+      background-image: -o-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+      background-image: -moz-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+      background-image: -webkit-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+      background-image: -ms-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+      background-image: linear-gradient(to bottom, #1541aa 25%, #0e2b7b 75%);
+      -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+      box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
       color: #fff; }
-  #main-container #life-insurance, #main-container #ofe {
-    display: none; }
+
+#life-insurance, #ofe {
+  display: none; }
