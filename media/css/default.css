@@ -117,20 +117,26 @@ input[type=checkbox] {
 
 /* '' */
 #main-container {
-  width: 980px;
-  margin: 10px;
+  max-width: 980px;
+  margin: 10px auto;
+  padding: 0px 10px;
   font-family: 'Droid Sans', sans-serif; }
   #main-container header {
+    max-width: 980px;
     padding: 25px 0 25px 25px;
-    background: url("../img/header.jpg") no-repeat; }
+    background: url("../img/header.jpg") no-repeat;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-size: cover; }
     #main-container header h2 {
       font-size: 32px;
       color: #103184; }
   #main-container #tabs {
-    float: left;
-    width: 652px;
+    width: calc((100% - 328px));
     margin-top: 16px;
-    margin-right: 14px; }
+    margin-right: 14px;
+    float: left; }
     #main-container #tabs nav {
       height: 78px; }
       #main-container #tabs nav ul li {
@@ -223,54 +229,59 @@ input[type=checkbox] {
     #main-container .content article a.header {
       display: block;
       text-decoration: none;
-      border: 1px solid #c9c9c9;
       margin-bottom: 2px;
       outline: none;
       padding: 12px 0 12px 15px;
-      color: #454545;
-      background-color: #ececec;
-      -webkit-box-shadow: 0 1px white, inset 0 0 5px rgba(252, 252, 252, 0.36);
-      -moz-box-shadow: 0 1px white, inset 0 0 5px rgba(252, 252, 252, 0.36);
-      box-shadow: 0 1px white, inset 0 0 5px rgba(252, 252, 252, 0.36);
-      border: solid 1px #c9c9c9;
-      background-image: -webkit-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
-      background-image: -moz-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
-      background-image: -o-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
-      background-image: linear-gradient(to top, #f3f3f3, #ebebeb 11%, #f9f9f9); }
-      #main-container .content article a.header.header-open {
-        color: #fff;
-        font-weight: bold;
-        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #1541aa), color-stop(0.75, #0e2b7b));
-        background-image: -o-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
-        background-image: -moz-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
-        background-image: -webkit-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
-        background-image: -ms-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
-        background-image: linear-gradient(to bottom, #1541aa 25%, #0e2b7b 75%);
-        border: none; }
-      #main-container .content article a.header h3 {
-        font-size: 14px;
-        line-height: 13px; }
-      #main-container .content article a.header span.ui-accordion-header-icon {
+      color: #fff;
+      font-weight: bold;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #1541aa), color-stop(0.75, #0e2b7b));
+      background-image: -o-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+      background-image: -moz-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+      background-image: -webkit-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+      background-image: -ms-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+      background-image: linear-gradient(to bottom, #1541aa 25%, #0e2b7b 75%);
+      border: none;
+      font-size: 14px;
+      line-height: 13px; }
+      #main-container .content article a.header .icon {
+        font-family: 'fontello';
         display: inline-block;
         float: right;
         position: relative;
         right: 12px;
-        font-size: 26px; }
-        #main-container .content article a.header span.ui-accordion-header-icon.icon-down-open {
+        font-size: 26px;
+        color: #fff; }
+        #main-container .content article a.header .icon::before {
+          content: '\e80c'; }
+      #main-container .content article a.header.header-closed {
+        color: #454545;
+        background-color: #ececec;
+        -webkit-box-shadow: 0 1px white, inset 0 0 5px rgba(252, 252, 252, 0.36);
+        -moz-box-shadow: 0 1px white, inset 0 0 5px rgba(252, 252, 252, 0.36);
+        box-shadow: 0 1px white, inset 0 0 5px rgba(252, 252, 252, 0.36);
+        border: solid 1px #c9c9c9;
+        background-image: -webkit-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
+        background-image: -moz-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
+        background-image: -o-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
+        background-image: linear-gradient(to top, #f3f3f3, #ebebeb 11%, #f9f9f9);
+        font-weight: normal; }
+        #main-container .content article a.header.header-closed .icon {
           color: #11348d; }
-        #main-container .content article a.header span.ui-accordion-header-icon.icon-up-open {
-          color: #fff; }
+          #main-container .content article a.header.header-closed .icon::before {
+            content: '\e80d'; }
     #main-container .content article section {
       padding-left: 14px;
-      padding-top: 22px; }
+      padding-top: 22px;
+      display: none; }
       #main-container .content article section p {
         font-size: 13px;
         margin-bottom: 20px;
         color: #393939; }
   #main-container #sidebar {
-    float: left;
     width: 314px;
-    margin-top: 14px; }
+    height: 538px;
+    margin-top: 14px;
+    float: left; }
     #main-container #sidebar section.sidebar-section {
       border: 1px solid #c9c9c9;
       margin-bottom: 8px;
@@ -440,3 +451,26 @@ input[type=checkbox] {
 
 #life-insurance, #ofe {
   display: none; }
+
+@media all and (max-width: 428px) {
+  body #main-container {
+    padding: 0px 5px; }
+    body #main-container #tabs {
+      width: 100%; }
+      body #main-container #tabs nav ul .left-li {
+        margin-right: 0px; }
+      body #main-container #tabs nav ul li a.life-insurance {
+        width: 162px;
+        text-indent: 8px; }
+      body #main-container #tabs nav ul li a.ofe {
+        width: 196px;
+        text-indent: 8px; } }
+@media all and (max-width: 784px) {
+  body #main-container {
+    padding: 0px 5px; }
+    body #main-container #tabs {
+      width: 100%; }
+    body #main-container #sidebar {
+      position: relative;
+      left: 50%;
+      margin-left: -157px; } }

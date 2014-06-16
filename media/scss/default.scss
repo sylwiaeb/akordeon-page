@@ -12,22 +12,28 @@
 }
 
 #main-container {
-    width: 980px;
-    margin: 10px ;
+    max-width: 980px;
+    margin: 10px auto;
+    padding: 0px 10px;
     font-family: 'Droid Sans', sans-serif;
     header {
+        max-width: 980px;
         padding: 25px 0 25px 25px;
         background: url('../img/header.jpg') no-repeat;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-size: cover;
         h2 {
             font-size: 32px;
             color: rgb(16,49,132);
         }
     }
     #tabs {
-        float: left;
-        width: 652px;
+        width: calc((100% - 328px));
         margin-top: 16px;
         margin-right: 14px;
+        float: left;
         nav {
             height: 78px;
             ul {
@@ -133,51 +139,51 @@
             a.header {
                 display: block;
                 text-decoration: none;
-                border: 1px solid #c9c9c9;
                 margin-bottom: 2px;
                 outline: none;
                 padding: 12px 0 12px 15px;
-                color: #454545;
-                background-color: #ececec;
-                -webkit-box-shadow: 0 1px #fff, inset 0 0 5px rgba(252,252,252,.36);
-                -moz-box-shadow: 0 1px #fff, inset 0 0 5px rgba(252,252,252,.36);
-                box-shadow: 0 1px #fff, inset 0 0 5px rgba(252,252,252,.36);
-                border: solid 1px #c9c9c9;
-                background-image: -webkit-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
-                background-image: -moz-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
-                background-image: -o-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
-                background-image: linear-gradient(to top, #f3f3f3, #ebebeb 11%, #f9f9f9);
-                &.header-open {
-                    color: #fff;
-                    font-weight: bold;
-                    @include blue-gradient;
-                    border: none;
+                color: #fff;
+                font-weight: bold;
+                @include blue-gradient;
+                border: none;
+                font-size: 14px;
+                line-height: 13px;
+                .icon {
+                    font-family: 'fontello';
+                    display:     inline-block;
+                    float:       right;
+                    position:    relative;
+                    right:       12px;
+                    font-size:   26px;
+                    color:       #fff;
+                    &::before {
+                        content: '\e80c';
+                    }
                 }
-                h3 {
-                    font-size: 14px;
-                    line-height: 13px;
-                }
-                span.ui-accordion-header-icon {
-                    display: inline-block;
-                    float: right;
-                    position: relative;
-                    right: 12px;
-                    font-size: 26px;
-
-
-                    &.icon-down-open {
+                &.header-closed {
+                    color: #454545;
+                    background-color: #ececec;
+                    -webkit-box-shadow: 0 1px #fff, inset 0 0 5px rgba(252,252,252,.36);
+                    -moz-box-shadow: 0 1px #fff, inset 0 0 5px rgba(252,252,252,.36);
+                    box-shadow: 0 1px #fff, inset 0 0 5px rgba(252,252,252,.36);
+                    border: solid 1px #c9c9c9;
+                    background-image: -webkit-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
+                    background-image: -moz-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
+                    background-image: -o-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
+                    background-image: linear-gradient(to top, #f3f3f3, #ebebeb 11%, #f9f9f9);
+                    font-weight: normal;
+                    .icon {
                         color: #11348d;
+                        &::before {
+                            content: '\e80d';
+                        }
                     }
-                    &.icon-up-open {
-                        color: #fff;
-                    }
-
-
                 }
             }
             section {
                 padding-left: 14px;
                 padding-top: 22px;
+                display: none;
                 p {
                     font-size: 13px;
                     margin-bottom: 20px;
@@ -187,9 +193,10 @@
         }
     }
     #sidebar {
-        float: left;
         width: 314px;
+        height: 538px;
         margin-top: 14px;
+        float: left;
         section.sidebar-section {
             border:             1px solid #c9c9c9;
             margin-bottom:      8px;
@@ -395,4 +402,50 @@
 }
 #life-insurance, #ofe {
     display: none;
+}
+
+@media all and (max-width: 428px) {
+    body {
+        #main-container {
+            padding: 0px 5px;
+            #tabs {
+                width: 100%;
+                nav {
+                    ul {
+                        .left-li {
+                            margin-right: 0px;
+                        }
+                        li {
+                            a {
+                                &.life-insurance {
+                                    width: 162px;
+                                    text-indent: 8px;
+                                }
+                                &.ofe {
+                                    width: 196px;
+                                    text-indent: 8px;
+                                }
+                            }
+                        }
+                    }
+                } 
+            }
+        }
+    }
+}
+
+@media all and (max-width: 784px) {
+    body {
+        #main-container {
+            padding: 0px 5px;
+            #tabs {
+                width: 100%; 
+            }
+            #sidebar {
+                position: relative;
+                left: 50%;
+                margin-left: -157px;
+            }
+        }
+    }
 }
