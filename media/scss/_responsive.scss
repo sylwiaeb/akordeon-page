@@ -1,0 +1,45 @@
+@media all and (max-width: 428px) {
+    body {
+        #main-container {
+            padding: 0px 5px;
+            #tabs {
+                width: 100%;
+                nav {
+                    ul {
+                        .left-li {
+                            margin-right: 0px;
+                        }
+                        li {
+                            a {
+                                &.life-insurance {
+                                    width: 162px;
+                                    text-indent: 8px;
+                                }
+                                &.ofe {
+                                    width: 196px;
+                                    text-indent: 8px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 784px) {
+    body {
+        #main-container {
+            padding: 0px 5px;
+            #tabs {
+                width: 100%;
+            }
+            #sidebar {
+                position: relative;
+                left: 50%;
+                margin-left: -157px;
+            }
+        }
+    }
+}

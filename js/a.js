@@ -29,10 +29,12 @@ AKO.toggleContent = function () {
     });
 };
 
-AKO.toggleFromUrl = function () {
+AKO.loadContentFromUrl = function () {
     var url = window.location.hash,
         containers = ['.section-1', '.section-2'],
-        i,j, el;
+        i,
+        j,
+        el;
 
     $('document').ready(function() {
         setTimeout(function() {
@@ -54,6 +56,7 @@ AKO.toggleFromUrl = function () {
 //            }
         },10);
     });
+    return false;
 };
 
 AKO.switchMenu = function () {
@@ -64,7 +67,7 @@ AKO.switchMenu = function () {
 
     menuItems.click(function (e) {
         $('a', menuItems).removeClass('selected');
-        $('a', $(this)).addClass('selected');
+        $('a', this).addClass('selected');
         menuItemActiveId = e.target.hash;
 
         for (i = 0; i < containers.length; i++) {
@@ -83,15 +86,15 @@ AKO.markCheckbox = function () {
             $(this).removeAttr('checked');
         }
     });
+    return false;
 };
 
 AKO.init = function () {
-    AKO.toggleFromUrl();
+    AKO.loadContentFromUrl();
     AKO.toogleAll();
     AKO.switchMenu();
     AKO.toggleContent();
     AKO.markCheckbox();
-
 };
 
 

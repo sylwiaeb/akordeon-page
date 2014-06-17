@@ -54,8 +54,15 @@ table {
 
 a, button, input {
     outline: none;
-
 }
 input[type=checkbox] {
     display:none;
+}
+
+input {
+    outline: none;
+    -webkit-appearance: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }

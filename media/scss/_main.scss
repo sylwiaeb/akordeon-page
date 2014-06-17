@@ -1,0 +1,408 @@
+#main-container {
+    max-width: 980px;
+    margin: 10px auto;
+    padding: 0px 10px;
+    font-family: 'Droid Sans', sans-serif;
+    header {
+        max-width: 980px;
+        padding: 25px 0 25px 25px;
+        background: url('../img/header.jpg') no-repeat;
+        background-position: center;
+        background-size: cover;
+        h2 {
+            font-size: 32px;
+            color: rgb(16,49,132);
+        }
+    }
+    //hide content by default
+    .section-1, .section-2 {
+        display: none;
+    }
+    #tabs {
+        width: calc((100% - 328px));
+        margin-top: 16px;
+        margin-right: 14px;
+        float: left;
+        nav {
+            height: 78px;
+            ul {
+                li {
+                    margin-right: 6px;
+                    display: inline-block;
+                    a {
+                        padding-top: 9px;
+                        padding-bottom: 9px;
+                        background-color: rgb(255,255,255);
+                        -webkit-box-shadow: 0 1px rgb(255,255,255);
+                        -moz-box-shadow: 0 1px rgb(255,255,255);
+                        box-shadow: 0 1px rgb(255,255,255);
+                        border: solid 1px rgb(185,185,185);
+                        border-bottom: 0;
+                        display: block;
+                        text-decoration: none;
+                        outline: none;
+                        color: rgb(110,133,190);
+                        font-size: 14px;
+                        -moz-background-origin: border;
+                        background-origin: border-box;
+                        &.life-insurance {
+                            width: 174px;
+                            text-indent: 15px;
+                        }
+                        &.ofe {
+                            width: 200px;
+                            text-indent: 10px;
+                        }
+                        &.selected {
+                            color: rgb(255,255,255);
+                            @include blue-gradient;
+                            border-color: rgba(255,255,255,0);
+                        }
+                    }
+                }
+            }
+            .control-panels {
+                position: relative;
+                background: rgb(244,245,247);
+                height: 45px;
+                border-top: 6px solid rgb(14,43,123);
+                .change-panels-state {
+                    width: 120px;
+                    height: 27px;
+                    float: right;
+                    top: 8px;
+                    right: 10px;
+                    position: relative;
+                    border: none;
+                    -webkit-box-shadow: 0 1px rgba(0,0,0,.3);
+                    -moz-box-shadow: 0 1px rgba(0,0,0,.3);
+                    box-shadow: 0 1px rgba(0,0,0,.3);
+                    color: rgb(255,255,255);
+                    margin: 0;
+                    padding: 0;
+                    font-size: 13px;
+                    @include blue-gradient;
+                    &::after {
+                        font-family: 'fontello';
+                        content: $arrow-down-mini;
+                        font-size: 16px;
+                        margin-left: 5px;
+                        position: relative;
+                        top: 2px;
+                    }
+                    &.show-all {
+                        width: 130px;
+                        color: rgb(56,56,56);
+                        background-color: rgb(255,255,255);
+                        -webkit-box-shadow: 0 1px rgba(0,0,0,.3);
+                        -moz-box-shadow: 0 1px rgba(0,0,0,.3);
+                        box-shadow: 0 1px rgba(0,0,0,.3);
+                        background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.25), rgba(255,255,255,.25));
+                        background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.25), rgba(255,255,255,.25));
+                        background-image: -o-linear-gradient(bottom, rgba(0,0,0,.25), rgba(255,255,255,.25));
+                        background-image: linear-gradient(to top, rgba(0,0,0,.25), rgba(255,255,255,.25));
+                        &::after {
+                            font-family: 'fontello';
+                            content: $arrow-up-mini;
+                            font-size: 16px;
+                        }
+                    }
+                    .caption {
+                        display: inline-block;
+                        text-align: center;
+                        font-size: 11px;
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+    .content {
+        clear: both;
+        margin-top: 20px;
+        article {
+            .header {
+                display: block;
+                margin-bottom: 2px;
+                outline: none;
+                border: none;
+                padding: 12px 0 12px 15px;
+                color: rgb(255,255,255);
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 13px;
+                text-decoration: none;
+                @include blue-gradient;
+                .icon {
+                    font-family: 'fontello';
+                    display: inline-block;
+                    float: right;
+                    position: relative;
+                    right: 12px;
+                    font-size: 26px;
+                    color: rgb(255,255,255);
+                    &::before {
+                        content: $arrow-up;
+                    }
+                }
+                &.header-closed {
+                    color: rgb(69,69,69);
+                    background-color: rgb(236,236,236);
+                    -webkit-box-shadow: 0 1px rgb(255,255,255), inset 0 0 5px rgba(252,252,252,.36);
+                    -moz-box-shadow: 0 1px rgb(255,255,255), inset 0 0 5px rgba(252,252,252,.36);
+                    box-shadow: 0 1px rgb(255,255,255), inset 0 0 5px rgba(252,252,252,.36);
+                    border: solid 1px rgb(201,201,201);
+                    @include light-gray-gradient;
+                    font-weight: normal;
+                    .icon {
+                        color: rgb(17,52,141);
+                        &::before {
+                            content: $arrow-down;
+                        }
+                    }
+                }
+            }
+            section {
+                padding-left: 14px;
+                padding-top: 22px;
+                display: none;
+                p {
+                    font-size: 13px;
+                    margin-bottom: 20px;
+                    color: rgb(57,57,57);
+                    a {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    #sidebar {
+        width: 314px;
+        height: 538px;
+        margin-top: 14px;
+        float: left;
+        .sidebar-section {
+            border:             1px solid rgb(201,201,201);
+            margin-bottom:      8px;
+            background-color:   rgb(239,240,242);
+            -webkit-box-shadow: 1px 1px rgb(255,255,255), inset 0 0 5px rgba(252, 252, 252, .36);
+            -moz-box-shadow:    1px 1px rgb(255,255,255), inset 0 0 5px rgba(252, 252, 252, .36);
+            box-shadow:         1px 1px rgb(255,255,255), inset 0 0 5px rgba(252, 252, 252, .36);
+            @include light-gray-gradient;
+            header {
+                background: none;
+                width:      280px;
+                padding:    0;
+                margin:     15px auto 0 auto;
+                h4 {
+                    font-size:     16px;
+                    font-weight:   bold;
+                    color:         rgb(208,29,29);
+                    border-bottom: 1px solid rgb(187,194,210);
+                    padding-bottom: 10px;
+                }
+            }
+        }
+        #vcard {
+            height: 118px;
+            .vcard-info {
+                margin-top: 15px;
+                margin-left: 20px;
+                ul {
+                    li {
+                        margin-bottom: 13px;
+                        a.vcard-mail, a.vcard-phone {
+                            text-decoration: none;
+                            font-size: 16px;
+                            font-weight: bold;
+                            color: rgb(16,49,132);
+                            span[class*='icon-'] {
+                                margin-right: 12px;
+                            }
+                        }
+                        &:first-of-type {
+                            margin-bottom: 14px;
+                        }
+                    }
+                }
+            }
+            figure {
+                float: right;
+                position: relative;
+                top: 0px;
+            }
+        }
+        #search {
+            height: 118px;
+            .search-form {
+                margin: 25px auto 0 auto;
+                width: 280px;
+                form {
+                    width: 100%;
+                    label {
+                        width: 1px;
+                        height: 1px;
+                        display: inline-block;
+                        position: relative;
+                        top: 8px;
+                        left: 8px;
+                        float: left;
+                        z-index: 100;
+                        font-size: 20px;
+                        color: rgb(16,49,132);
+                    }
+                    input[type='search'] {
+                        width: 254px;
+                        height: 33px;
+                        font-size: 14px;
+                        background-color: rgb(255,255,255);
+                        display: inline-block;
+                        -webkit-box-shadow: 1px 1px rgba(255,255,255,.35), inset 0 0 3px rgba(0,0,0,.5);
+                        -moz-box-shadow: 1px 1px rgba(255,255,255,.35), inset 0 0 3px rgba(0,0,0,.5);
+                        box-shadow: 1px 1px rgba(255,255,255,.35), inset 0 0 3px rgba(0,0,0,.5);
+                        padding: 0 0 0 28px;
+                        border: none;
+                        position: relative;
+                        float: left;
+                        &::-webkit-input-placeholder {
+                            color:    rgb(16,49,132);
+                        }
+                        &:-moz-placeholder {
+                            color:    rgb(16,49,132);
+                            opacity:  1;
+                        }
+                        &::-moz-placeholder {
+                            color:    rgb(16,49,132);
+                            opacity:  1;
+                        }
+                        &:-ms-input-placeholder {
+                            color:    rgb(16,49,132);
+                        }
+                    }
+                    .button-search {
+                        width: 25px;
+                        height: 33px;
+                        border: none;
+                        padding: 0;
+                        @include blue-gradient;
+                        -webkit-box-shadow: inset 1px 1px 2px rgba(0,0,0,.3);
+                        -moz-box-shadow: inset 1px 1px 2px rgba(0,0,0,.3);
+                        box-shadow: inset 1px 1px 2px rgba(0,0,0,.3);
+                        color: rgb(255,255,255);
+                        &::before {
+                            font-family: 'fontello';
+                            font-size: 26px;
+                            content: $arrow-right;
+                        }
+                    }
+                }
+            }
+        }
+        #contact {
+            height: 300px;
+            .contact-form {
+                width: 280px;
+                margin: 20px auto 0 auto;
+                form {
+                    width: 100%;
+                    input {
+                        width: 100%;
+                        height: 31px;
+                        background-color: rgb(255,255,255);
+                        border: solid 1px rgb(214,214,214);
+                        font-size: 14px;
+                        color: rgb(104,104,104);
+                        margin-bottom: 8px;
+                        padding: 0 5px 0 13px;
+
+                        &::-webkit-input-placeholder {
+                            color:    rgb(104,104,104);
+                            font-style: italic;
+                        }
+                        &:-moz-placeholder {
+                            color:    rgb(104,104,104);
+                            font-style: italic;
+                            opacity:  1;
+                        }
+                        &::-moz-placeholder {
+                            color:    rgb(104,104,104);
+                            font-style: italic;
+                            opacity:  1;
+                        }
+                        &:-ms-input-placeholder {
+                            color:    rgb(104,104,104);
+                            font-style: italic;
+                        }
+                    }
+                    input[type=checkbox] + label {
+                        font-size: 11px;
+                        display: inline-block;
+                        span {
+                            display: inline-block;
+                            width: 240px;
+                            margin-top: 5px;
+                            color: rgb(56,56,56);
+                        }
+                    }
+                    input[type=checkbox] + label:before {
+                        content: "";
+                        display: inline-block;
+                        float: left;
+                        width: 20px;
+                        height: 20px;
+                        vertical-align:middle;
+                        margin-right: 8px;
+                        background-color: rgb(255,255,255);
+                        -moz-box-shadow: 0 0 0 1px rgb(201,201,201);
+                        -webkit-box-shadow: 0 0 0 1px rgb(201,201,201);
+                        box-shadow: 0 0 0 1px rgb(201,201,201);
+                        border-radius: 0px;
+                    }
+                    input[type=checkbox]:checked + label:before {
+                        font-family: 'fontello';
+                        content: $ok;
+                        color: rgb(220,0,9);
+                        background-color: rgb(255,255,255);
+                        text-align:center;
+                        line-height:20px;
+                        text-shadow:0px 0px 3px #eee;
+                    }
+                    .button-submit {
+                        width: 92px;
+                        background-color: rgb(220,0,9);
+                        -webkit-box-shadow: 1px 1px rgba(0,0,0,.36), inset 1px 1px rgba(255,255,255,.63);
+                        -moz-box-shadow: 1px 1px rgba(0,0,0,.36), inset 1px 1px rgba(255,255,255,.63);
+                        box-shadow: 1px 1px rgba(0,0,0,.36), inset 1px 1px rgba(255,255,255,.63);
+                        background-image: -webkit-linear-gradient(top, rgb(219,37,37), rgb(197,22,22));
+                        background-image: -moz-linear-gradient(top, rgb(219,37,37), rgb(197,22,22));
+                        background-image: -o-linear-gradient(top, rgb(219,37,37), rgb(197,22,22));
+                        background-image: linear-gradient(to bottom, rgb(219,37,37), rgb(197,22,22));
+                        border: none;
+                        color: rgb(255,255,255);
+                        font-size: 16px;
+                        display: block;
+                        position: relative;
+                        float: right;
+                        margin-top: 22px;
+                        line-height: 21px;
+                        padding: 6px 0;
+                        &::after {
+                            font-family: "fontello";
+                            content: '\e80f';
+                            margin-left: 5px;
+                            position: relative;
+                            top: 2px;
+                            left: 5px;
+                            font-size: 19px;
+                        }
+                    }
+                }
+            }
+            h4 {
+                color: rgb(0,38,100);
+                line-height: 18px;
+            }
+        }
+    }
+}

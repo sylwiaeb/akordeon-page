@@ -51,6 +51,13 @@ a, button, input {
 input[type=checkbox] {
   display: none; }
 
+input {
+  outline: none;
+  -webkit-appearance: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 @font-face {
   font-family: 'fontello';
   src: url("../font/fontello.eot?10765766");
@@ -83,7 +90,6 @@ input[type=checkbox] {
 .icon-up-open-mini:before {
   content: '\e800'; }
 
-/* '' */
 .icon-ok:before {
   content: '\e801'; }
 
@@ -125,13 +131,13 @@ input[type=checkbox] {
     max-width: 980px;
     padding: 25px 0 25px 25px;
     background: url("../img/header.jpg") no-repeat;
-    background-repeat: no-repeat;
-    background-size: contain;
     background-position: center;
     background-size: cover; }
     #main-container header h2 {
       font-size: 32px;
       color: #103184; }
+  #main-container .section-1, #main-container .section-2 {
+    display: none; }
   #main-container #tabs {
     width: calc((100% - 328px));
     margin-top: 16px;
@@ -145,10 +151,10 @@ input[type=checkbox] {
         #main-container #tabs nav ul li a {
           padding-top: 9px;
           padding-bottom: 9px;
-          background-color: #fff;
-          -webkit-box-shadow: 0 1px #fff;
-          -moz-box-shadow: 0 1px #fff;
-          box-shadow: 0 1px #fff;
+          background-color: white;
+          -webkit-box-shadow: 0 1px white;
+          -moz-box-shadow: 0 1px white;
+          box-shadow: 0 1px white;
           border: solid 1px #b9b9b9;
           border-bottom: 0;
           display: block;
@@ -165,7 +171,7 @@ input[type=checkbox] {
             width: 200px;
             text-indent: 10px; }
           #main-container #tabs nav ul li a.selected {
-            color: #fff;
+            color: white;
             background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #1541aa), color-stop(0.75, #0e2b7b));
             background-image: -o-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
             background-image: -moz-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
@@ -176,33 +182,40 @@ input[type=checkbox] {
       #main-container #tabs nav .control-panels {
         position: relative;
         background: #f4f5f7;
-        height: 51px;
-        border-top: 6px solid #0E2B7B; }
-        #main-container #tabs nav .control-panels button.change-panels-state {
-          width: 130px;
+        height: 45px;
+        border-top: 6px solid #0e2b7b; }
+        #main-container #tabs nav .control-panels .change-panels-state {
+          width: 120px;
+          height: 27px;
           float: right;
-          top: 14px;
+          top: 8px;
           right: 10px;
           position: relative;
           border: none;
-          outline: none;
           -webkit-box-shadow: 0 1px rgba(0, 0, 0, 0.3);
           -moz-box-shadow: 0 1px rgba(0, 0, 0, 0.3);
           box-shadow: 0 1px rgba(0, 0, 0, 0.3);
-          color: #fff;
-          padding: 0;
-          padding-top: 2px;
-          padding-bottom: 7px;
+          color: white;
           margin: 0;
+          padding: 0;
+          font-size: 13px;
           background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #1541aa), color-stop(0.75, #0e2b7b));
           background-image: -o-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
           background-image: -moz-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
           background-image: -webkit-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
           background-image: -ms-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
           background-image: linear-gradient(to bottom, #1541aa 25%, #0e2b7b 75%); }
-          #main-container #tabs nav .control-panels button.change-panels-state.show-all {
+          #main-container #tabs nav .control-panels .change-panels-state::after {
+            font-family: 'fontello';
+            content: "\e80e";
+            font-size: 16px;
+            margin-left: 5px;
+            position: relative;
+            top: 2px; }
+          #main-container #tabs nav .control-panels .change-panels-state.show-all {
+            width: 130px;
             color: #383838;
-            background-color: #fff;
+            background-color: white;
             -webkit-box-shadow: 0 1px rgba(0, 0, 0, 0.3);
             -moz-box-shadow: 0 1px rgba(0, 0, 0, 0.3);
             box-shadow: 0 1px rgba(0, 0, 0, 0.3);
@@ -210,50 +223,46 @@ input[type=checkbox] {
             background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
             background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
             background-image: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25)); }
-          #main-container #tabs nav .control-panels button.change-panels-state span.caption {
+            #main-container #tabs nav .control-panels .change-panels-state.show-all::after {
+              font-family: 'fontello';
+              content: "\e800";
+              font-size: 16px; }
+          #main-container #tabs nav .control-panels .change-panels-state .caption {
             display: inline-block;
-            width: 96px;
             text-align: center;
             font-size: 11px;
             position: relative; }
-          #main-container #tabs nav .control-panels button.change-panels-state span.arrow {
-            width: 5px;
-            height: 5px;
-            font-size: 16px;
-            position: relative;
-            top: 2px;
-            left: 4px; }
   #main-container .content {
     clear: both;
     margin-top: 20px; }
-    #main-container .content article a.header {
+    #main-container .content article .header {
       display: block;
-      text-decoration: none;
       margin-bottom: 2px;
       outline: none;
+      border: none;
       padding: 12px 0 12px 15px;
-      color: #fff;
+      color: white;
       font-weight: bold;
+      font-size: 14px;
+      line-height: 13px;
+      text-decoration: none;
       background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #1541aa), color-stop(0.75, #0e2b7b));
       background-image: -o-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
       background-image: -moz-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
       background-image: -webkit-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
       background-image: -ms-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
-      background-image: linear-gradient(to bottom, #1541aa 25%, #0e2b7b 75%);
-      border: none;
-      font-size: 14px;
-      line-height: 13px; }
-      #main-container .content article a.header .icon {
+      background-image: linear-gradient(to bottom, #1541aa 25%, #0e2b7b 75%); }
+      #main-container .content article .header .icon {
         font-family: 'fontello';
         display: inline-block;
         float: right;
         position: relative;
         right: 12px;
         font-size: 26px;
-        color: #fff; }
-        #main-container .content article a.header .icon::before {
-          content: '\e80c'; }
-      #main-container .content article a.header.header-closed {
+        color: white; }
+        #main-container .content article .header .icon::before {
+          content: "\e80c"; }
+      #main-container .content article .header.header-closed {
         color: #454545;
         background-color: #ececec;
         -webkit-box-shadow: 0 1px white, inset 0 0 5px rgba(252, 252, 252, 0.36);
@@ -263,12 +272,13 @@ input[type=checkbox] {
         background-image: -webkit-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
         background-image: -moz-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
         background-image: -o-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
+        background-image: -ms-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
         background-image: linear-gradient(to top, #f3f3f3, #ebebeb 11%, #f9f9f9);
         font-weight: normal; }
-        #main-container .content article a.header.header-closed .icon {
+        #main-container .content article .header.header-closed .icon {
           color: #11348d; }
-          #main-container .content article a.header.header-closed .icon::before {
-            content: '\e80d'; }
+          #main-container .content article .header.header-closed .icon::before {
+            content: "\e80d"; }
     #main-container .content article section {
       padding-left: 14px;
       padding-top: 22px;
@@ -277,12 +287,14 @@ input[type=checkbox] {
         font-size: 13px;
         margin-bottom: 20px;
         color: #393939; }
+        #main-container .content article section p a {
+          text-decoration: underline; }
   #main-container #sidebar {
     width: 314px;
     height: 538px;
     margin-top: 14px;
     float: left; }
-    #main-container #sidebar section.sidebar-section {
+    #main-container #sidebar .sidebar-section {
       border: 1px solid #c9c9c9;
       margin-bottom: 8px;
       background-color: #eff0f2;
@@ -292,165 +304,188 @@ input[type=checkbox] {
       background-image: -webkit-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
       background-image: -moz-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
       background-image: -o-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
-      background-image: linear-gradient(to top, #f3f3f3, #ebebeb 11%, #f9f9f9);
-      padding: 12px 0px 15px 15px; }
-      #main-container #sidebar section.sidebar-section header {
+      background-image: -ms-linear-gradient(bottom, #f3f3f3, #ebebeb 11%, #f9f9f9);
+      background-image: linear-gradient(to top, #f3f3f3, #ebebeb 11%, #f9f9f9); }
+      #main-container #sidebar .sidebar-section header {
         background: none;
-        width: 281px;
+        width: 280px;
         padding: 0;
-        margin: 0; }
-        #main-container #sidebar section.sidebar-section header h4 {
+        margin: 15px auto 0 auto; }
+        #main-container #sidebar .sidebar-section header h4 {
           font-size: 16px;
           font-weight: bold;
           color: #d01d1d;
           border-bottom: 1px solid #bbc2d2;
           padding-bottom: 10px; }
-    #main-container #sidebar #contact .sidebar-content {
-      margin-top: 20px;
-      margin-bottom: 35px; }
-    #main-container #sidebar #contact h4 {
-      color: #002664; }
-    #main-container #sidebar #contact input {
-      width: 265px;
-      height: 31px;
-      background-color: #fff;
-      border: solid 1px #d6d6d6;
-      font-size: 14px;
-      color: #686868;
-      margin-bottom: 8px;
-      padding: 0 5px 0 13px; }
-      #main-container #sidebar #contact input::-webkit-input-placeholder {
-        color: #686868;
-        font-style: italic; }
-      #main-container #sidebar #contact input:-moz-placeholder {
-        color: #686868;
-        font-style: italic;
-        opacity: 1; }
-      #main-container #sidebar #contact input::-moz-placeholder {
-        color: #686868;
-        font-style: italic;
-        opacity: 1; }
-      #main-container #sidebar #contact input:-ms-input-placeholder {
-        color: #686868;
-        font-style: italic; }
-    #main-container #sidebar #contact input[type=checkbox] + label {
-      font-size: 11px;
-      line-height: 0px; }
-    #main-container #sidebar #contact input[type=checkbox] + label:before {
-      content: "";
-      display: inline-block;
-      float: left;
-      width: 20px;
-      height: 20px;
-      vertical-align: middle;
-      margin-right: 8px;
-      background-color: #fff;
-      -moz-box-shadow: 0 0 0 1px #c9c9c9;
-      -webkit-box-shadow: 0 0 0 1px #c9c9c9;
-      box-shadow: 0 0 0 1px #c9c9c9;
-      border-radius: 0px; }
-    #main-container #sidebar #contact input[type=checkbox]:checked + label:before {
-      font-family: 'fontello';
-      content: '\e801';
-      color: #dc0009;
-      background-color: #fff;
-      text-align: center;
-      line-height: 20px;
-      text-shadow: 0px 0px 3px #eee; }
-    #main-container #sidebar #contact button[type='submit'] {
-      width: 93px;
-      background-color: #dc0009;
-      -webkit-box-shadow: 1px 1px rgba(0, 0, 0, 0.36), inset 1px 1px rgba(255, 255, 255, 0.63);
-      -moz-box-shadow: 1px 1px rgba(0, 0, 0, 0.36), inset 1px 1px rgba(255, 255, 255, 0.63);
-      box-shadow: 1px 1px rgba(0, 0, 0, 0.36), inset 1px 1px rgba(255, 255, 255, 0.63);
-      background-image: -webkit-linear-gradient(top, #db2525, #c51616);
-      background-image: -moz-linear-gradient(top, #db2525, #c51616);
-      background-image: -o-linear-gradient(top, #db2525, #c51616);
-      background-image: linear-gradient(to bottom, #db2525, #c51616);
-      border: none;
-      color: #fff;
-      font-size: 16px;
-      display: block;
-      float: right;
-      position: relative;
-      right: 15px;
-      margin-top: 20px; }
-      #main-container #sidebar #contact button[type='submit']::after {
-        font-family: "fontello";
-        content: '\e80f';
-        margin-left: 5px;
-        position: relative;
-        top: 2px;
-        left: 5px;
-        font-size: 25px; }
     #main-container #sidebar #vcard {
-      height: 91px; }
-      #main-container #sidebar #vcard .sidebar-content {
-        margin-top: 10px; }
+      height: 118px; }
+      #main-container #sidebar #vcard .vcard-info {
+        margin-top: 15px;
+        margin-left: 20px; }
+        #main-container #sidebar #vcard .vcard-info ul li {
+          margin-bottom: 13px; }
+          #main-container #sidebar #vcard .vcard-info ul li a.vcard-mail, #main-container #sidebar #vcard .vcard-info ul li a.vcard-phone {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: #103184; }
+            #main-container #sidebar #vcard .vcard-info ul li a.vcard-mail span[class*='icon-'], #main-container #sidebar #vcard .vcard-info ul li a.vcard-phone span[class*='icon-'] {
+              margin-right: 12px; }
+          #main-container #sidebar #vcard .vcard-info ul li:first-of-type {
+            margin-bottom: 14px; }
       #main-container #sidebar #vcard figure {
         float: right;
         position: relative;
-        top: -12px; }
-      #main-container #sidebar #vcard ul li {
-        margin-bottom: 13px; }
-        #main-container #sidebar #vcard ul li a.vcard-mail, #main-container #sidebar #vcard ul li a.vcard-phone {
-          text-decoration: none;
-          font-size: 16px;
-          font-weight: bold;
-          color: #103184; }
-          #main-container #sidebar #vcard ul li a.vcard-mail span[class*='icon-'], #main-container #sidebar #vcard ul li a.vcard-phone span[class*='icon-'] {
-            margin-right: 12px; }
-    #main-container #sidebar #search .sidebar-content {
-      margin-top: 25px; }
-    #main-container #sidebar #search label {
-      width: 1px;
-      height: 1px;
-      display: inline-block;
-      position: relative;
-      left: 8px;
-      font-size: 20px;
-      top: 3px;
-      z-index: 100;
-      color: #103184; }
-    #main-container #sidebar #search input[type='search'] {
-      width: 255px;
-      font-size: 14px;
-      background-color: #fff;
-      display: inline-block;
-      -webkit-box-shadow: 1px 1px rgba(255, 255, 255, 0.35), inset 0 0 3px rgba(0, 0, 0, 0.5);
-      -moz-box-shadow: 1px 1px rgba(255, 255, 255, 0.35), inset 0 0 3px rgba(0, 0, 0, 0.5);
-      box-shadow: 1px 1px rgba(255, 255, 255, 0.35), inset 0 0 3px rgba(0, 0, 0, 0.5);
-      padding: 5px 5px 5px 28px;
-      border: none; }
-      #main-container #sidebar #search input[type='search']::-webkit-input-placeholder {
-        color: #103184; }
-      #main-container #sidebar #search input[type='search']:-moz-placeholder {
-        color: #103184;
-        opacity: 1; }
-      #main-container #sidebar #search input[type='search']::-moz-placeholder {
-        color: #103184;
-        opacity: 1; }
-      #main-container #sidebar #search input[type='search']:-ms-input-placeholder {
-        color: #103184; }
-    #main-container #sidebar #search button.search {
-      width: 25px;
-      border: none;
-      padding: 5px 0;
-      font-size: 15px;
-      line-height: 16px;
-      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #1541aa), color-stop(0.75, #0e2b7b));
-      background-image: -o-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
-      background-image: -moz-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
-      background-image: -webkit-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
-      background-image: -ms-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
-      background-image: linear-gradient(to bottom, #1541aa 25%, #0e2b7b 75%);
-      -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
-      -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
-      box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
-      color: #fff; }
-
-#life-insurance, #ofe {
-  display: none; }
+        top: 0px; }
+    #main-container #sidebar #search {
+      height: 118px; }
+      #main-container #sidebar #search .search-form {
+        margin: 25px auto 0 auto;
+        width: 280px; }
+        #main-container #sidebar #search .search-form form {
+          width: 100%; }
+          #main-container #sidebar #search .search-form form label {
+            width: 1px;
+            height: 1px;
+            display: inline-block;
+            position: relative;
+            top: 8px;
+            left: 8px;
+            float: left;
+            z-index: 100;
+            font-size: 20px;
+            color: #103184; }
+          #main-container #sidebar #search .search-form form input[type='search'] {
+            width: 254px;
+            height: 33px;
+            font-size: 14px;
+            background-color: white;
+            display: inline-block;
+            -webkit-box-shadow: 1px 1px rgba(255, 255, 255, 0.35), inset 0 0 3px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 1px 1px rgba(255, 255, 255, 0.35), inset 0 0 3px rgba(0, 0, 0, 0.5);
+            box-shadow: 1px 1px rgba(255, 255, 255, 0.35), inset 0 0 3px rgba(0, 0, 0, 0.5);
+            padding: 0 0 0 28px;
+            border: none;
+            position: relative;
+            float: left; }
+            #main-container #sidebar #search .search-form form input[type='search']::-webkit-input-placeholder {
+              color: #103184; }
+            #main-container #sidebar #search .search-form form input[type='search']:-moz-placeholder {
+              color: #103184;
+              opacity: 1; }
+            #main-container #sidebar #search .search-form form input[type='search']::-moz-placeholder {
+              color: #103184;
+              opacity: 1; }
+            #main-container #sidebar #search .search-form form input[type='search']:-ms-input-placeholder {
+              color: #103184; }
+          #main-container #sidebar #search .search-form form .button-search {
+            width: 25px;
+            height: 33px;
+            border: none;
+            padding: 0;
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #1541aa), color-stop(0.75, #0e2b7b));
+            background-image: -o-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+            background-image: -moz-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+            background-image: -webkit-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+            background-image: -ms-linear-gradient(bottom, #1541aa 25%, #0e2b7b 75%);
+            background-image: linear-gradient(to bottom, #1541aa 25%, #0e2b7b 75%);
+            -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+            box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+            color: white; }
+            #main-container #sidebar #search .search-form form .button-search::before {
+              font-family: 'fontello';
+              font-size: 26px;
+              content: "\e80f"; }
+    #main-container #sidebar #contact {
+      height: 300px; }
+      #main-container #sidebar #contact .contact-form {
+        width: 280px;
+        margin: 20px auto 0 auto; }
+        #main-container #sidebar #contact .contact-form form {
+          width: 100%; }
+          #main-container #sidebar #contact .contact-form form input {
+            width: 100%;
+            height: 31px;
+            background-color: white;
+            border: solid 1px #d6d6d6;
+            font-size: 14px;
+            color: #686868;
+            margin-bottom: 8px;
+            padding: 0 5px 0 13px; }
+            #main-container #sidebar #contact .contact-form form input::-webkit-input-placeholder {
+              color: #686868;
+              font-style: italic; }
+            #main-container #sidebar #contact .contact-form form input:-moz-placeholder {
+              color: #686868;
+              font-style: italic;
+              opacity: 1; }
+            #main-container #sidebar #contact .contact-form form input::-moz-placeholder {
+              color: #686868;
+              font-style: italic;
+              opacity: 1; }
+            #main-container #sidebar #contact .contact-form form input:-ms-input-placeholder {
+              color: #686868;
+              font-style: italic; }
+          #main-container #sidebar #contact .contact-form form input[type=checkbox] + label {
+            font-size: 11px;
+            display: inline-block; }
+            #main-container #sidebar #contact .contact-form form input[type=checkbox] + label span {
+              display: inline-block;
+              width: 240px;
+              margin-top: 5px;
+              color: #383838; }
+          #main-container #sidebar #contact .contact-form form input[type=checkbox] + label:before {
+            content: "";
+            display: inline-block;
+            float: left;
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 8px;
+            background-color: white;
+            -moz-box-shadow: 0 0 0 1px #c9c9c9;
+            -webkit-box-shadow: 0 0 0 1px #c9c9c9;
+            box-shadow: 0 0 0 1px #c9c9c9;
+            border-radius: 0px; }
+          #main-container #sidebar #contact .contact-form form input[type=checkbox]:checked + label:before {
+            font-family: 'fontello';
+            content: "\e801";
+            color: #dc0009;
+            background-color: white;
+            text-align: center;
+            line-height: 20px;
+            text-shadow: 0px 0px 3px #eee; }
+          #main-container #sidebar #contact .contact-form form .button-submit {
+            width: 92px;
+            background-color: #dc0009;
+            -webkit-box-shadow: 1px 1px rgba(0, 0, 0, 0.36), inset 1px 1px rgba(255, 255, 255, 0.63);
+            -moz-box-shadow: 1px 1px rgba(0, 0, 0, 0.36), inset 1px 1px rgba(255, 255, 255, 0.63);
+            box-shadow: 1px 1px rgba(0, 0, 0, 0.36), inset 1px 1px rgba(255, 255, 255, 0.63);
+            background-image: -webkit-linear-gradient(top, #db2525, #c51616);
+            background-image: -moz-linear-gradient(top, #db2525, #c51616);
+            background-image: -o-linear-gradient(top, #db2525, #c51616);
+            background-image: linear-gradient(to bottom, #db2525, #c51616);
+            border: none;
+            color: white;
+            font-size: 16px;
+            display: block;
+            position: relative;
+            float: right;
+            margin-top: 22px;
+            line-height: 21px;
+            padding: 6px 0; }
+            #main-container #sidebar #contact .contact-form form .button-submit::after {
+              font-family: "fontello";
+              content: '\e80f';
+              margin-left: 5px;
+              position: relative;
+              top: 2px;
+              left: 5px;
+              font-size: 19px; }
+      #main-container #sidebar #contact h4 {
+        color: #002664;
+        line-height: 18px; }
 
 @media all and (max-width: 428px) {
   body #main-container {

@@ -38,14 +38,22 @@
 
 }
 
-.icon-up-open-mini:before { content: '\e800'; } /* '' */
+.icon-up-open-mini:before { content: '\e800'; }
 .icon-ok:before { content: '\e801'; } /* '' */
 .icon-phone:before { content: '\e80a'; } /* '' */
 .icon-mail:before { content: '\e80b'; } /* '' */
 .icon-up-open:before { content: '\e80c'; } /* '' */
 .icon-down-open:before { content: '\e80d'; } /* '' */
 .icon-down-open-mini:before { content: '\e80e'; } /* '' */
-.icon-right-open:before {
-    content: '\e80f';
-} /* '' */
+.icon-right-open:before { content: '\e80f';} /* '' */
 .icon-search:before { content: '\e812'; } /* '' */
+
+$arrow-up: '\e80c';
+$arrow-up-mini: '\e800';
+$arrow-down: '\e80d';
+$arrow-down-mini: '\e80e';
+$arrow-right: '\e80f';
+$search: '\e812';
+$mail: '\e80b';
+$phone: '\e80a';
+$ok: '\e801';
